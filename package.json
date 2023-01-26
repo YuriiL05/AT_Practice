@@ -7,7 +7,7 @@
   "scripts": {
     "test": "mocha",
     "coverage": "c8 npm test",
-    "lint": "eslint ./",
+    "lint": "eslint ./ --fix",
     "prepare": "husky install"
   },
   "keywords": [],

@@ -1,6 +1,6 @@
 import {NumbersValidator} from '../../app/numbers_validator.js';
 import {expect} from 'chai';
-describe('isNumberEven positive test', () => {
+describe('isNumberEven positive and negative test', () => {
   let validator;
   beforeEach(() => {
     validator = new NumbersValidator();
@@ -12,12 +12,12 @@ describe('isNumberEven positive test', () => {
 
   it('should return true when provide an even number', () => {
     const validationResults = validator.isNumberEven(10);
-    expect(validationResults).to.be.equal(true);
+    expect(validationResults).to.be.true;
   });
 
   it('should return false when provide an odd number', () => {
     const validationResults = validator.isNumberEven(3);
-    expect(validationResults).to.be.equal(false);
+    expect(validationResults).to.be.be.false;
   });
 
   it('should throw an error when provide a string', () => {
