@@ -116,7 +116,7 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: 'http://localhost',
+  baseUrl: 'https://ej2.syncfusion.com',
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
@@ -159,7 +159,7 @@ exports.config = {
       [
           'junit',
         {
-          outputDir: `../reports`,
+          outputDir: `./reports`,
           outputFileFormat: function(options) {
             return `results-${options.cid}.${options.capabilities.browserName}.xml`
           }
@@ -168,7 +168,7 @@ exports.config = {
     [
         'allure',
       {
-        outputDir: '../reports/allure-results',
+        outputDir: './reports/allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: true,
       }
@@ -340,7 +340,7 @@ exports.config = {
   // },
   onComplete: function () {
     const reportError = new Error('Could not generate Allure report');
-    const generation = allure(['generate', '../reports/allure-results', '--clean', '-o', '../reports/allure-report']);
+    const generation = allure(['generate', './reports/allure-results', '--clean', '-o', './reports/allure-report']);
     return new Promise((resolve, reject) => {
       const generationTimeout = setTimeout(() => reject(reportError), 5000);
       generation.on('exit', function (exitCode) {
